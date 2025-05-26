@@ -1,0 +1,105 @@
+.materi-layout {
+  display: flex;
+  height: 100vh;
+  background-color: #f9fbfd;
+  overflow: hidden;
+}
+
+/* Area utama */
+.materi-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  -ms-overflow-style: none; /* IE & Edge */
+  scrollbar-width: none;     /* Firefox */
+  height: 100vh;
+}
+
+.materi-main::-webkit-scrollbar {
+  display: none;             /* Chrome, Safari */
+}
+
+/* Kontainer konten */
+.materi-container {
+  padding: 40px 30px;
+  background-color: #d9e6f3;
+  min-height: 100vh;
+}
+
+/* Judul */
+.materi-title {
+  font-weight: 700;
+  color: #0d3b66;
+  margin-bottom: 25px;
+}
+
+/* Grid untuk daftar materi */
+.materi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
+}
+
+/* Kartu materi */
+.materi-card {
+  display: flex;
+  gap: 16px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 16px 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e0e7ef;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.materi-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+}
+
+/* Gambar thumbnail materi */
+.materi-image {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+
+/* Konten di dalam kartu */
+.materi-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.materi-content h3 {
+  margin: 0;
+  font-size: 16px;
+  color: #1a202c;
+}
+
+.materi-content p {
+  margin: 6px 0;
+  color: #666;
+  font-size: 14px;
+}
+
+/* Tombol buka materi */
+.open-button {
+  align-self: flex-start;
+  background-color: #4d9ef7;
+  color: #ffffff;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.open-button:hover {
+  background-color: #2563eb;
+}

@@ -1,0 +1,57 @@
+.admin-sidebar {
+  position: sticky;
+  top: 0;
+  width: 220px;
+  height: 94vh;
+  background-color: #ffffff;
+  padding: 1rem;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* ✅ Tidak bisa di-scroll */
+  z-index: 10;
+}
+
+/* Scrollbar styling TIDAK perlu jika tidak ada scroll */
+.admin-sidebar::-webkit-scrollbar,
+.scroll-hidden::-webkit-scrollbar {
+  display: none;
+}
+
+.admin-sidebar,
+.scroll-hidden {
+  -ms-overflow-style: none; /* IE dan Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+
+.admin-logo {
+  font-size: 1.4rem;
+  color: #1d4ed8;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.admin-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: #555;
+  padding: 0.65rem 1rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  font-size: 15px;
+}
+
+.nav-item:hover,
+.nav-item.active {
+  background-color: #dbeafe;
+  color: #2563eb;
+  font-weight: 500;
+}

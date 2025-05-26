@@ -1,0 +1,17 @@
+.right-container {
+  flex: 1;
+  height: 100vh;
+  background: linear-gradient(360deg, #e0f7fa, #ffffff);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.bg-image {
+  width: 85% !important;
+  height: 85% !important;
+  object-fit: cover;
+  /* border-radius: 20px !important; */
+  box-shadow: none; /* HILANGKAN efek timbul */
+}

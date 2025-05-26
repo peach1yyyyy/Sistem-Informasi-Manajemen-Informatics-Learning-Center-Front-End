@@ -1,0 +1,111 @@
+.left-container {
+  flex: 1;
+  background: linear-gradient(360deg, #e0f7fa, #ffffff);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+}
+
+.form-box {
+  padding: 40px;
+  border-radius: 20px;
+  /* box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1); */
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.form-box h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.welcome-image {
+  height: 50px;
+  object-fit: contain;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.form input {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  background-color: #f9fafb;
+}
+
+.form input:focus {
+  border-color: #64b5f6;
+  background: #ffffff;
+  outline: none;
+  box-shadow: 0 0 8px rgba(100, 181, 246, 0.6); /* efek glow saat focus */
+}
+
+.submit-btn {
+  background-color: #3b82f6;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.submit-btn:hover {
+  background-color: #2563eb; 
+  transform: scale(1.05);
+  box-shadow: 0 4px 14px rgba(59, 130, 246, 0.4);
+}
+
+.oauth-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+  justify-content: center;
+}
+
+.oauth-btn {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  background: white;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.apple {
+  background-color: #000;
+  color: #fff;
+}
+
+.google {
+  background-color: #fff;
+  color: #000;
+}
+
+.signin-link {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #555;
+}
+
+.signin-link a {
+  color: #42a5f5;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.signin-link a:hover {
+  text-decoration: underline;
+}

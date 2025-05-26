@@ -1,0 +1,28 @@
+.statistic-chart {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  }
+  
+  .chart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .chart-header h3 {
+    color: #0d3b66;
+    margin: 0;
+  }
+  
+  .chart-header select {
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: #f0f4f8;
+    color: #333;
+    cursor: pointer;
+  }
+  

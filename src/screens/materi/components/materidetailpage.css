@@ -1,0 +1,119 @@
+/* Hilangkan scrollbar tapi tetap bisa scroll */
+body::-webkit-scrollbar {
+  display: none;
+}
+body {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  margin: 0;
+  padding: 0;
+  background-color: #d9e6f3;
+  height: 100%;
+}
+
+/* Layout utama */
+.materi-detail-layout {
+  display: flex;
+  height: 100vh;
+  background-color: #d9e6f3;
+  overflow: hidden;
+}
+
+.materi-detail-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  height: 100vh;
+  background-color: transparent;
+  color: white;
+  scroll-behavior: smooth;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  padding: 30px 40px;
+}
+
+.materi-detail-main::-webkit-scrollbar {
+  display: none;
+}
+
+.materi-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.materi-detail-title {
+  color: #0d3b66;
+  margin-top: 35px;
+  margin-bottom: 25px;
+  font-weight: 700;
+}
+
+/* Tombol kembali */
+.back-button {
+  background-color: #ef4444;
+  color: white;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  margin-top: 40px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.back-button:hover {
+  background-color: #dc2626;
+  transform: scale(1.05);
+  box-shadow: 0 4px 14px rgba(239, 68, 68, 0.4);
+}
+
+/* Kontainer modul */
+.materi-detail-modules {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding-bottom: 100px; /* agar bisa scroll sampai paling bawah */
+}
+
+/* Dropdown modul */
+.modul-dropdown {
+  background-color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  padding: 15px 20px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  color: #0d3b66;
+  transition: background-color 0.3s;
+}
+
+.modul-dropdown summary {
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.modul-dropdown:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.modul-content {
+  margin-top: 10px;
+}
+
+.modul-image {
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+}
+
+.youtube-thumbnail {
+  border-radius: 8px;
+  transition: transform 0.2s;
+}
+.youtube-thumbnail:hover {
+  transform: scale(1.02);
+}

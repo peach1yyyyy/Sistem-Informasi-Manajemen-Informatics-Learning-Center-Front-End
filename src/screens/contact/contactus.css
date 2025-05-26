@@ -1,0 +1,106 @@
+.contact-container {
+    display: flex;
+    height: 100vh;
+    background-color: #f3f4f6;
+    overflow: hidden;
+  }
+  
+  .contact-content {
+    flex: 1;
+    padding: 10px 60px;
+    overflow-y: auto;
+    background-color: #d9e6f3;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .contact-content::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .contact-content h2 {
+    color: #0d3b66;
+    margin-left: 5px;
+  }
+  
+  .contact-content p {
+    color: #6b7280;
+    margin-bottom: 15px;
+    margin-left: 5px;
+    font-size: 16px;
+  }
+  
+  .contact-form {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    margin-bottom: 40px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .contact-form label {
+    display: block;
+    margin-bottom: 8px;
+    color: #374151;
+    font-weight: 500;
+  }
+  
+  .contact-form input,
+  .contact-form textarea {
+    width: 810px;
+    padding: 12px 14px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-family: inherit;
+    font-size: 14px;
+    background-color: #f9fafb;
+    transition: all 0.25s ease-in-out; /* <- transisi halus untuk semua properti */
+  }
+  
+  .contact-form input:focus,
+  .contact-form textarea:focus {
+    border-color: #64b5f6;
+    background: #ffffff;
+    outline: none;
+    box-shadow: 0 0 8px rgba(100, 181, 246, 0.6); /* efek glow saat focus */
+  }
+  
+  
+  .contact-form button {
+    background-color: #3b82f6;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .contact-form button:hover {
+    background-color: #2563eb; 
+    transform: scale(1.05);
+    box-shadow: 0 4px 14px rgba(59, 130, 246, 0.4);
+  }  
+  
+  .contact-info {
+    padding: 10px 25px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  }
+  
+  .contact-info h3 {
+    color: #0d3b66;
+    margin-left: 5px;
+  }
+  
+  .contact-info p {
+    margin-bottom: 10px;
+    color: #4b5563;
+    font-size: 14px;
+  }
+  

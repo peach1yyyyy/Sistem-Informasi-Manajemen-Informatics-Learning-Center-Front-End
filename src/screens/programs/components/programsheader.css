@@ -1,0 +1,50 @@
+.programs-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+  }
+  
+  .greeting h2 {
+    margin: 0;
+    font-size: 24px;
+    color: #2e2e2e;
+  }
+  
+  .greeting p {
+    margin: 4px 0 0;
+    font-size: 14px;
+    color: #888;
+  }
+  
+  .search-profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .search-profile input {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    width: 220px;
+  }
+
+  .search-profile input:focus {
+    border-color: #64b5f6;
+    background: #ffffff;
+    outline: none;
+    box-shadow: 0 0 8px rgba(100, 181, 246, 0.6); /* efek glow saat focus */
+  }
+  
+  .search-profile button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .profile-icon {
+    font-size: 32px;
+    color: #555;
+  }
+  

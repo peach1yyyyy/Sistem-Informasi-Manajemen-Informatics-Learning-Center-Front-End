@@ -1,0 +1,51 @@
+.seminar-container {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #d9e6f3;
+}
+
+.seminar-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    overflow-x: auto; /* Scroll horizontal aktif */
+    overflow-y: scroll; /* Scroll vertical aktif, tapi scrollbar disembunyikan */
+}
+
+.seminar-content::-webkit-scrollbar {
+    height: 8px; /* Menentukan tinggi scrollbar horizontal */
+    width: 8px;  /* Menentukan lebar scrollbar vertikal */
+}
+
+.seminar-content::-webkit-scrollbar-thumb {
+    background-color: rgba(128, 128, 128, 0.5); /* Warna abu transparan untuk scrollbar horizontal */
+    border-radius: 10px;
+}
+
+.seminar-content::-webkit-scrollbar-track {
+    background-color: transparent; /* Menyembunyikan track scrollbar */
+}
+
+.seminar-content::-webkit-scrollbar:vertical {
+    display: none; /* Menyembunyikan scrollbar vertical */
+}
+
+.seminar-side-widgets {
+    width: 220px;
+    height: 100vh;
+    background-color: #f4f7fe;
+    padding: 1rem;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+}
+
+.box {
+    flex: 1;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    padding: 20px;
+}

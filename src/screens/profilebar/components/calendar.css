@@ -1,0 +1,83 @@
+.calendar-container {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    width: 100%;
+    max-width: 300px; /* diperkecil dari sebelumnya */
+    font-family: 'Segoe UI', sans-serif;
+    overflow: visible;
+    box-sizing: border-box;
+  }
+  
+  .calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+  
+  .calendar-header h3 {
+    margin: 0;
+    font-size: 16px; /* lebih kecil */
+    color: #0d3b66;
+  }
+  
+  .calendar-header button {
+    background: #4d9ef7;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.3s;
+  }
+  
+  .calendar-header button:hover {
+    background-color: #2563eb;
+  }
+  
+  .calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+  }
+  
+  .calendar-day-name {
+    font-size: 11px;
+    font-weight: bold;
+    text-align: center;
+    color: #4b5563;
+  }
+  
+  .calendar-day {
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border-radius: 6px;
+    font-size: 12px;
+    color: #374151;
+    transition: background 0.2s, transform 0.2s;
+  }
+  
+  .calendar-day:hover {
+    background-color: rgba(0, 123, 255, 0.08);
+    transform: scale(1.05);
+    cursor: pointer;
+  }
+  
+  .calendar-day.today {
+    background-color: #4d9ef7;
+    color: white;
+    font-weight: bold;
+  }
+  
+  .calendar-day.empty {
+    background: transparent;
+    cursor: default;
+  }
+  
