@@ -7,15 +7,20 @@ const initialTasks = [
   { id: 3, title: 'Baca materi ML', deadline: '2025-05-08', completed: false },
 ];
 
+// Fungsi format tanggal
+const formatTanggal = (tanggal) => {
+  if (!tanggal) return '';
+  const [year, month, day] = tanggal.split('-');
+  return `${day}/${month}/${year}`;
+};
+
 const TaskList = () => {
   const [tasks, setTasks] = useState(() => {
-    // Coba ambil dari localStorage dulu
     const savedTasks = localStorage.getItem('tasks');
     return savedTasks ? JSON.parse(savedTasks) : initialTasks;
   });
 
   useEffect(() => {
-    // Simpan ke localStorage setiap kali state tasks berubah
     localStorage.setItem('tasks', JSON.stringify(tasks));
   }, [tasks]);
 
@@ -39,7 +44,7 @@ const TaskList = () => {
             <div className="checkbox" />
             <div className="task-info">
               <span className="task-title">{task.title}</span>
-              <span className="task-deadline">📅 {task.deadline}</span>
+              <span className="task-deadline">📅 {formatTanggal(task.deadline)}</span>
             </div>
           </li>
         ))}

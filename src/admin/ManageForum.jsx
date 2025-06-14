@@ -41,47 +41,58 @@ const ManageForum = () => {
     setForums(updated);
   };
 
+  // Fungsi format tanggal ke "dd MMMM yyyy" dalam Bahasa Indonesia
+  const formatTanggal = (tanggal) => {
+    if (!tanggal) return '–';
+    const dateObj = new Date(tanggal);
+    if (isNaN(dateObj)) return tanggal; // fallback kalau bukan tanggal valid
+
+    return dateObj.toLocaleDateString('id-ID', {
+      day: '2-digit',
+      month: 'long',
+      year: 'numeric',
+    });
+  };
+
   return (
     <div style={{ display: 'flex' }}>
       <AdminSidebar />
-      <div className="admin-page scroll-hidden" style={{ flex: 1 }} >
+      <div className="admin-page scroll-hidden" style={{ flex: 1 }}>
         <h1>Kelola Forum</h1>
         <div className="admin-actions">
-          <button className="admin-btn add" onClick={handleAdd}>Tambah Forum</button>
+          <button className="admin-btn add" onClick={handleAdd}>
+            Tambah Forum
+          </button>
         </div>
 
         <table className="admin-table">
           <thead>
             <tr>
               <th>Judul Forum</th>
-              <th>Urutan</th>
               <th>Tanggal</th>
-              <th>Subforum</th>
               <th>Aksi</th>
             </tr>
           </thead>
           <tbody>
             {forums.map((item, index) => (
-              <React.Fragment key={index}>
-                <tr>
-                  <td>{item.judul}</td>
-                  <td>{item.urutan}</td>
-                  <td>{item.tanggal}</td>
-                  <td>
-                    {item.subforum?.length > 0 ? (
-                      <ul style={{ paddingLeft: '16px' }}>
-                        {item.subforum.map((sub, idx) => (
-                          <li key={idx}>{sub}</li>
-                        ))}
-                      </ul>
-                    ) : '–'}
-                  </td>
-                  <td>
-                    <button className="admin-btn edit" onClick={() => handleEdit(index)}>Update</button>
-                    <button className="admin-btn delete" onClick={() => handleDelete(index)}>Hapus</button>
-                  </td>
-                </tr>
-              </React.Fragment>
+              <tr key={index}>
+                <td>{item.judul}</td>
+                <td>{formatTanggal(item.tanggal)}</td>
+                <td>
+                  <button
+                    className="admin-btn edit"
+                    onClick={() => handleEdit(index)}
+                  >
+                    Update
+                  </button>
+                  <button
+                    className="admin-btn delete"
+                    onClick={() => handleDelete(index)}
+                  >
+                    Hapus
+                  </button>
+                </td>
+              </tr>
             ))}
           </tbody>
         </table>

@@ -11,8 +11,8 @@ const ProfileBar = () => {
       <nav className="profilebar-nav">
 
         <UserProfile />
-        {/* <Calendar />
-        <TaskList /> */}
+        <Calendar />
+        <TaskList />
       </nav>
     </div>
   );

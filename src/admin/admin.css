@@ -40,7 +40,7 @@
     padding: 0.5rem 1rem;
     border: none;
     border-radius: 6px;
-    font-weight: 500;
+    font-weight: 600;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
   }
@@ -189,8 +189,9 @@
   .admin-table th {
     background-color: #f9fafb;
     font-weight: 600;
+    text-align: center;
   }
-  
+
   /* Komponen daftar umum seperti Forum dan Contact */
 .admin-list.forum,
 .admin-list.contact {
@@ -509,4 +510,15 @@
   outline: none;
   border-color: #3b82f6;
   box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+.input-text,
+.react-datepicker-wrapper,
+.react-datepicker__input-container input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 8px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }

@@ -36,10 +36,10 @@ const AdminSidebar = () => {
         <NavLink to="/admin/users" className="nav-item">Manage Users</NavLink>
         <NavLink to="/admin/programs" className="nav-item">Manage Programs</NavLink>
         <NavLink to="/admin/materials" className="nav-item">Manage Materials</NavLink>
-        {/* <NavLink to="/admin/certificates" className="nav-item">Manage Certificates</NavLink>
+        <NavLink to="/admin/certificates" className="nav-item">Manage Certificates</NavLink>
         <NavLink to="/admin/forum" className="nav-item">Manage Forum</NavLink>
         <NavLink to="/admin/payment" className="nav-item">Manage Payment</NavLink>
-        <NavLink to="/admin/contact" className="nav-item">Manage Feedback</NavLink> */}
+        <NavLink to="/admin/contact" className="nav-item">Manage Feedback</NavLink>
         <NavLink to="/" className="nav-item">Logout</NavLink>
       </nav>
     </div>

@@ -1,11 +1,15 @@
-// AddProgramModal.jsx
 import React, { useState, useEffect } from 'react';
+import DatePicker, { registerLocale } from 'react-datepicker';
+import id from 'date-fns/locale/id';
+import 'react-datepicker/dist/react-datepicker.css';
 import './admin.css';
+
+registerLocale('id', id);
 
 const AddProgramModal = ({ onClose, onSave, defaultData }) => {
   const [formData, setFormData] = useState({
     title: '',
-    date: '',
+    date: null, // simpan sebagai Date object
     type: 'Course',
     price: '',
   });
@@ -14,24 +18,33 @@ const AddProgramModal = ({ onClose, onSave, defaultData }) => {
   useEffect(() => {
     if (defaultData) {
       setFormData({
-        title: defaultData.title,
-        date: defaultData.date,
-        type: defaultData.type,
-        price: defaultData.price,
+        title: defaultData.title || '',
+        date: defaultData.date ? new Date(defaultData.date) : null,
+        type: defaultData.type || 'Course',
+        price: defaultData.price || '',
       });
       setDescription(defaultData.description || '');
+    } else {
+      setFormData({
+        title: '',
+        date: null,
+        type: 'Course',
+        price: '',
+      });
+      setDescription('');
     }
   }, [defaultData]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const fullData = {
       ...formData,
+      date: formData.date ? formData.date.toISOString().split('T')[0] : '',
       description,
     };
     onSave(fullData);
@@ -66,12 +79,13 @@ const AddProgramModal = ({ onClose, onSave, defaultData }) => {
             />
           </div>
 
-
-          <input
-            type="date"
-            name="date"
-            value={formData.date}
-            onChange={handleChange}
+          <label>Tanggal Program</label>
+          <DatePicker
+            selected={formData.date}
+            onChange={(date) => setFormData((prev) => ({ ...prev, date }))}
+            dateFormat="dd MMMM yyyy"
+            locale="id"
+            placeholderText="Pilih tanggal"
             required
           />
 
@@ -94,8 +108,12 @@ const AddProgramModal = ({ onClose, onSave, defaultData }) => {
           />
 
           <div className="modal-actions">
-            <button type="submit" className="admin-btn add">Simpan</button>
-            <button type="button" className="admin-btn delete" onClick={onClose}>Batal</button>
+            <button type="submit" className="admin-btn add">
+              Simpan
+            </button>
+            <button type="button" className="admin-btn delete" onClick={onClose}>
+              Batal
+            </button>
           </div>
         </form>
       </div>

@@ -59,7 +59,7 @@ const Left_Regis = () => {
   return (
     <div className="left-container">
       <div className="form-box">
-        <h2>Create an account</h2>
+        <h2>Create An Account</h2>
         <p><br /></p>
         <form className="form" onSubmit={handleSubmit}>
           <input

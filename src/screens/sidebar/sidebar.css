@@ -9,9 +9,9 @@
 }
 
 .sidebar-logo {
+  margin-top: 1rem;
   text-align: center;
-  margin-top: 1.5rem;
-  margin-bottom: 1rem;
+  margin-bottom: 2.5rem;
 }
 
 .sidebar-logo-img {
@@ -21,9 +21,19 @@
 }
 
 .sidebar-nav {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-main-links {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+}
+
+.sidebar-logout {
+  margin-top: 8rem; /* Ini yang bikin Logout agak di bawah, tapi tidak terlalu */
 }
 
 .nav-item {
@@ -42,5 +52,5 @@
 .nav-item.active {
   background-color: #dbeafe;
   color: #2563eb;
-  font-weight: 500;
+  font-weight: 600;
 }

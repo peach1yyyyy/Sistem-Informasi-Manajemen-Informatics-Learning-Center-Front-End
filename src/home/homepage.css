@@ -3,7 +3,7 @@
     flex-direction: column;
     min-height: 100vh;
     font-family: 'Segoe UI', sans-serif;
-    background-color: #f9f9f9;
+    background-color: white;
     color: #333;
   }
   
@@ -184,8 +184,7 @@
 
 .ilc-logo {
   width: 40px;
-  height: 40px;
-  background-color: white;
+  height: 5%;
   border-radius: 50%;
   padding: 4px;
 }
@@ -212,7 +211,7 @@
 
 /* Gaya baru untuk deskripsi ILC */
 .ilc-intro-banner {
-  background: linear-gradient(to right, #eef2ff, #dbeafe);
+  background: linear-gradient(to bottom, #eef2ff, #dbeafe);
   padding: 3rem 2rem;
   text-align: center;
   border-radius: 18px;
@@ -280,4 +279,204 @@
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
+.contact-section {
+  background: white;
+  padding: 2.5rem 2rem;
+  text-align: center;
+  /* border-top: 2px solid #dbeafe;
+  border-bottom: 2px solid #dbeafe; */
+}
 
+.contact-section h2 {
+  font-size: 1.8rem;
+  color: #1e3a8a;
+  margin-bottom: 1rem;
+}
+
+.contact-section p {
+  font-size: 1rem;
+  color: #374151;
+  margin-bottom: 2rem;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  max-width: 500px;
+  margin: 0 auto;
+  /* tambahkan background gradient di sini */
+  background: linear-gradient(to bottom, #eef2ff, #dbeafe) !important;
+  padding: 2rem;
+  border-radius: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 0.75rem 1rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  font-size: 1rem;
+  resize: none;
+  max-width: 469px;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
+}
+
+.submit-btn {
+  padding: 0.75rem;
+  background-color: #2563eb;
+  color: white;
+  font-weight: 600 !important;
+  font-size: 14px !important; 
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.submit-btn:hover {
+  background-color: #1e40af;
+  transform: translateY(-2px);
+}
+
+/* program type blocks */
+.program-type-block {
+margin-bottom: 3rem;
+}
+
+.program-type-title {
+font-size: 1.5rem;
+color: #1e40af;
+font-weight: 600;
+text-align: center;
+margin-bottom: 0.5rem;
+}
+
+.program-type-description {
+text-align: center;
+margin-bottom: 1rem;
+color: #475569;
+font-size: 15px;
+}
+
+.program-type-section {
+  margin-bottom: 3rem;
+}
+
+.program-type-section h3 {
+  font-size: 1.5rem;
+  color: #2563eb;
+  margin-bottom: 0.3rem;
+}
+
+.program-desc {
+  font-size: 1rem;
+  color: #374151;
+  margin-bottom: 1rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.enhanced-card {
+  background: linear-gradient(to bottom, #eef2ff, #dbeafe);
+  /* border: 1px solid ; */
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+  padding: 1.5rem;
+  transition: all 0.3s ease-in-out;
+  border-radius: 16px;
+}
+
+.enhanced-card:hover {
+  transform: scale(1.05);
+  background: linear-gradient(to bottom, #eef2ff, #dbeafe);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.card-title {
+  font-size: 1.1rem;
+  color: #1d4ed8;
+  margin-bottom: 0.5rem;
+}
+
+.card-content p {
+  font-size: 0.9rem;
+  color: #374151;
+}
+
+
+.carousel-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding: 0 1rem; /* ruang aman untuk shadow */
+  /* Hapus overflow: hidden agar shadow tidak terpotong */
+}
+
+.carousel-scroll {
+  display: flex;
+  gap: 1.2rem;
+  overflow-x: auto;
+  overflow-y: visible; /* ✅ penting agar shadow kartu bisa keluar */
+  scroll-behavior: smooth;
+  padding: 1rem 0;
+  scrollbar-width: none;
+}
+
+.carousel-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel-card {
+  flex: 0 0 auto;
+  width: 227px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  z-index: 1; /* pastikan kartu berada di atas kontainer */
+}
+
+.carousel-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.carousel-arrow {
+  background-color: #2563eb;
+  color: white;
+  font-size: 1.4rem;
+  border: none;
+  border-radius: 100%;
+  width: 35px;
+  height: 30px;
+  cursor: pointer;
+  z-index: 10;
+  opacity: 0.7;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-arrow:hover {
+  background-color: #1e3a8a;
+  opacity: 1;
+}
+
+.carousel-arrow.left {
+  margin-right: 0.5rem;
+}
+
+.carousel-arrow.right {
+  margin-left: 0.5rem;
+}

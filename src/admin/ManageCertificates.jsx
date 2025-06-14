@@ -41,13 +41,28 @@ const ManageCertificate = () => {
     setCertificates(updated);
   };
 
+  // Fungsi format tanggal ke "dd MMMM yyyy" dalam Bahasa Indonesia
+  const formatTanggal = (tanggal) => {
+    if (!tanggal) return '–';
+    const dateObj = new Date(tanggal);
+    if (isNaN(dateObj)) return tanggal; // fallback kalau bukan tanggal valid
+
+    return dateObj.toLocaleDateString('id-ID', {
+      day: '2-digit',
+      month: 'long',
+      year: 'numeric',
+    });
+  };
+
   return (
     <div style={{ display: 'flex' }}>
       <AdminSidebar />
       <div className="admin-page scroll-hidden" style={{ flex: 1 }}>
         <h1>Kelola Sertifikat</h1>
         <div className="admin-actions">
-          <button className="admin-btn add" onClick={handleAdd}>Tambah Sertifikat</button>
+          <button className="admin-btn add" onClick={handleAdd}>
+            Tambah Sertifikat
+          </button>
         </div>
         <table className="admin-table">
           <thead>
@@ -61,10 +76,20 @@ const ManageCertificate = () => {
             {certificates.map((item, index) => (
               <tr key={index}>
                 <td>{item.nama}</td>
-                <td>{item.tanggal}</td>
+                <td>{formatTanggal(item.tanggal)}</td>
                 <td>
-                  <button className="admin-btn edit" onClick={() => handleEdit(index)}>Update</button>
-                  <button className="admin-btn delete" onClick={() => handleDelete(index)}>Hapus</button>
+                  <button
+                    className="admin-btn edit"
+                    onClick={() => handleEdit(index)}
+                  >
+                    Update
+                  </button>
+                  <button
+                    className="admin-btn delete"
+                    onClick={() => handleDelete(index)}
+                  >
+                    Hapus
+                  </button>
                 </td>
               </tr>
             ))}

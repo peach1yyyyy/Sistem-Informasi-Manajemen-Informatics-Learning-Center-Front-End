@@ -1,6 +1,21 @@
 import React from 'react';
 import './coursecard.css';
 
+// Format Rupiah
+const formatRupiah = (angka) => {
+  if (!angka) return 'Rp. 0,00';
+  const number = Number(angka);
+  return 'Rp. ' + number.toLocaleString('id-ID') + ',00';
+};
+
+// Format tanggal: 27 Mei 2025
+const formatDate = (dateStr) => {
+  if (!dateStr) return '-';
+  const date = new Date(dateStr);
+  const options = { day: 'numeric', month: 'long', year: 'numeric' };
+  return date.toLocaleDateString('id-ID', options);
+};
+
 const CourseCard = ({ title, type, image, date, price, description, onClick }) => {
   return (
     <div className="course-card" onClick={onClick} style={{ cursor: onClick ? 'pointer' : 'default' }}>
@@ -8,7 +23,7 @@ const CourseCard = ({ title, type, image, date, price, description, onClick }) =
         src={image || 'https://via.placeholder.com/150'}
         alt={title || 'Program Image'}
         className="course-image"
-        onError={e => {
+        onError={(e) => {
           e.target.onerror = null;
           e.target.src = 'https://via.placeholder.com/150';
         }}
@@ -17,8 +32,8 @@ const CourseCard = ({ title, type, image, date, price, description, onClick }) =
         <h3 className="course-title">{title}</h3>
         <p className="course-description">{description || '-'}</p>
         <div className="course-meta">
-          <p><span role="img" aria-label="calendar">📅</span> {date ? new Date(date).toLocaleDateString() : '-'}</p>
-          <p><span role="img" aria-label="money">💰</span> Rp{price ?? '0'}</p>
+          <p><span role="img" aria-label="calendar">📅</span> {formatDate(date)}</p>
+          <p><span role="img" aria-label="money">💰</span> {formatRupiah(price)}</p>
           <p><span role="img" aria-label="type">📝</span> {type || '-'}</p>
         </div>
       </div>

@@ -102,3 +102,17 @@
 .signup-link a:hover {
   text-decoration: underline;
 }
+
+/* Tambahan styling untuk "Lupa Password?" dan "Kembali ke Login" */
+.forgot-password-link {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #3b82f6;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.forgot-password-link:hover {
+  color: #2563eb;
+  text-decoration: underline;
+}

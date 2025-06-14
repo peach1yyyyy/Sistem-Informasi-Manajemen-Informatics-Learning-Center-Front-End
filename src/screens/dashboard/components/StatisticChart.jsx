@@ -1,19 +1,16 @@
-// src/screens/dashboard/components/StatisticChart.jsx
 import React, { useState } from 'react';
-import { LineChart } from '@mui/x-charts/LineChart';
+import { BarChart } from '@mui/x-charts/BarChart';
 import './statisticchart.css';
 
 const StatisticChart = () => {
   const [period, setPeriod] = useState('weekly');
 
-  // Contoh data dummy untuk 2 course
   const xAxisData = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
   const course1Data = [2, 3, 1.5, 4, 2, 3, 1];
   const course2Data = [1, 2.5, 3, 2, 1.5, 2.5, 2];
 
   const handlePeriodChange = (e) => {
     setPeriod(e.target.value);
-    // Nanti kamu bisa sesuaikan datanya berdasarkan periode yang dipilih
   };
 
   return (
@@ -26,11 +23,11 @@ const StatisticChart = () => {
           <option value="yearly">Yearly</option>
         </select>
       </div>
-      <LineChart
-        xAxis={[{ scaleType: 'point', data: xAxisData }]}
+      <BarChart
+        xAxis={[{ scaleType: 'band', data: xAxisData }]}
         series={[
-          { data: course1Data, label: 'Course A', color: '#3f72af' },
-          { data: course2Data, label: 'Course B', color: '#ff7f50' }
+          { data: course1Data, label: 'Course A', color: '#5a9bd4' },
+          { data: course2Data, label: 'Course B', color: '#f48c74' }
         ]}
         height={300}
       />

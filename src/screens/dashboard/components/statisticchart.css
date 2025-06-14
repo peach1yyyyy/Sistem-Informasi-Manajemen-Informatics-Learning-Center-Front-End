@@ -1,28 +1,48 @@
 .statistic-chart {
-    background-color: #ffffff;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  }
-  
-  .chart-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px;
-  }
-  
-  .chart-header h3 {
-    color: #0d3b66;
-    margin: 0;
-  }
-  
-  .chart-header select {
-    padding: 6px 12px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    background-color: #f0f4f8;
-    color: #333;
-    cursor: pointer;
-  }
-  
+  background-color: #ffffff;
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  transition: box-shadow 0.3s ease;
+}
+
+.statistic-chart:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.chart-header h3 {
+  color: #0d3b66;
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.chart-header select {
+  padding: 8px 14px;
+  border: 1px solid #d0d7de;
+  border-radius: 8px;
+  background-color: #f6f8fa;
+  color: #0d3b66;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: border-color 0.2s, background-color 0.2s;
+}
+
+.chart-header select:hover {
+  background-color: #e9eef3;
+  border-color: #c3c9cf;
+}
+
+.chart-header select:focus {
+  outline: none;
+  border-color: #3f72af;
+  background-color: #e4ecf7;
+}

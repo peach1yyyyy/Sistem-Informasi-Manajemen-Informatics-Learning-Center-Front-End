@@ -1,44 +1,41 @@
 import React, { useState, useEffect } from 'react';
+import DatePicker, { registerLocale } from 'react-datepicker';
+import id from 'date-fns/locale/id';
+import 'react-datepicker/dist/react-datepicker.css';
 import './admin.css';
+
+registerLocale('id', id);
 
 const AddForumModal = ({ onClose, onSave, defaultData }) => {
   const [judul, setJudul] = useState('');
-  const [urutan, setUrutan] = useState('');
-  const [tanggal, setTanggal] = useState('');
-  const [subforumInput, setSubforumInput] = useState('');
-  const [subforumList, setSubforumList] = useState([]);
+  const [tanggal, setTanggal] = useState(null); // Date object
 
   useEffect(() => {
     if (defaultData) {
       setJudul(defaultData.judul || '');
-      setUrutan(defaultData.urutan || '');
-      setTanggal(defaultData.tanggal || '');
-      setSubforumList(defaultData.subforum || []);
+
+      if (defaultData.tanggal) {
+        const d = new Date(defaultData.tanggal);
+        setTanggal(isNaN(d) ? null : d);
+      } else {
+        setTanggal(null);
+      }
+    } else {
+      setJudul('');
+      setTanggal(null);
     }
   }, [defaultData]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
     const data = {
       judul,
-      urutan,
-      tanggal,
-      subforum: subforumList,
+      tanggal: tanggal ? tanggal.toISOString().split('T')[0] : '',
     };
+
     onSave(data);
     onClose();
-  };
-
-  const handleAddSubforum = () => {
-    if (subforumInput.trim() !== '') {
-      setSubforumList([...subforumList, subforumInput.trim()]);
-      setSubforumInput('');
-    }
-  };
-
-  const handleRemoveSubforum = (index) => {
-    const updated = subforumList.filter((_, i) => i !== index);
-    setSubforumList(updated);
   };
 
   return (
@@ -47,41 +44,36 @@ const AddForumModal = ({ onClose, onSave, defaultData }) => {
         <h2>{defaultData ? 'Edit Forum' : 'Tambah Forum Baru'}</h2>
         <form onSubmit={handleSubmit}>
           <label>Judul Forum</label>
-          <input type="text" value={judul} onChange={(e) => setJudul(e.target.value)} required />
-
-          <label>Urutan</label>
-          <input type="number" value={urutan} onChange={(e) => setUrutan(e.target.value)} required />
+          <input
+            type="text"
+            value={judul}
+            onChange={(e) => setJudul(e.target.value)}
+            required
+            className="input-text"
+          />
 
           <label>Tanggal</label>
-          <input type="date" value={tanggal} onChange={(e) => setTanggal(e.target.value)} required />
-
-          <label>Subforum</label>
-          <div style={{ display: 'flex', gap: '10px' }}>
-            <input
-              type="text"
-              value={subforumInput}
-              onChange={(e) => setSubforumInput(e.target.value)}
-              placeholder="Tambah subforum"
-            />
-            <button type="button" className="admin-btn add" onClick={handleAddSubforum}>+</button>
-          </div>
-
-          {subforumList.length > 0 && (
-            <ul style={{ marginTop: '10px', paddingLeft: '20px' }}>
-              {subforumList.map((sf, index) => (
-                <li key={index}>
-                  {sf}
-                  <button type="button" onClick={() => handleRemoveSubforum(index)} style={{ marginLeft: '10px' }}>
-                    ❌
-                  </button>
-                </li>
-              ))}
-            </ul>
-          )}
+          <DatePicker
+            selected={tanggal}
+            onChange={(date) => setTanggal(date)}
+            dateFormat="dd MMMM yyyy"
+            locale="id"
+            placeholderText="Pilih tanggal"
+            required
+            className="input-text"
+          />
 
           <div className="modal-actions">
-            <button type="submit" className="admin-btn add">Simpan</button>
-            <button type="button" className="admin-btn delete" onClick={onClose}>Batal</button>
+            <button type="submit" className="admin-btn add">
+              Simpan
+            </button>
+            <button
+              type="button"
+              className="admin-btn delete"
+              onClick={onClose}
+            >
+              Batal
+            </button>
           </div>
         </form>
       </div>

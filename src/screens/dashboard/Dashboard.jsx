@@ -5,6 +5,8 @@ import './dashboard.css';
 import DashboardHeader from './components/DashboardHeader';
 import CourseCards from './components/CourseCards';
 import StatisticChart from './components/StatisticChart';
+import CertificateBox from './components/CertificateBox';
+
 
 const Dashboard = () => {
   // Jika ingin pakai search, aktifkan fungsi ini dan passing ke DashboardHeader
@@ -24,6 +26,7 @@ const Dashboard = () => {
         <DashboardHeader />
         <CourseCards />
         <StatisticChart />
+        <CertificateBox />
       </div>
       <ProfileBar />
     </div>
